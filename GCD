@@ -1,0 +1,43 @@
+Euclidean Algorithm using Subtraction - O(min(a,b)) Time and O(min(a,b)) Space
+
+class GfG {
+
+    static int gcd(int a, int b) {
+        // Everything divides 0
+        if (a == 0)
+            return b;
+        if (b == 0)
+            return a;
+
+        // Base case
+        if (a == b)
+            return a;
+
+        // a is greater
+        if (a > b)
+            return gcd(a - b, b);
+        return gcd(a, b - a);
+    }
+
+    public static void main(String[] args) {
+        int a = 20, b = 28;
+        System.out.println(gcd(a, b));
+    }
+}
+
+
+TC: O(log(min(a,b)))
+
+class GfG {
+
+    // Recursive function to calculate GCD using Euclidean algorithm
+    static int gcd(int a, int b) {
+        return (b == 0) ? a : gcd(b, a % b);
+    }
+
+    // Driver code
+    public static void main(String[] args) {
+        int a = 20, b = 28;
+        System.out.println(gcd(a, b)); 
+    }
+}
