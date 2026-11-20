@@ -9,6 +9,37 @@ AND	X & X	  X
 OR	X | 0s	X
 OR	X | 1s	1s
 
+// Function to get the bit at the
+// ith position
+static boolean getBit(int num, int i)
+{
+    // Return true if the bit is
+    // set. Otherwise return false
+    return ((num & (1 << i)) != 0);
+}
+
+// Function to set the ith bit of the
+// given number num
+static int setBit(int num, int i)
+{
+    // Sets the ith bit and return
+    // the updated value
+    return num | (1 << i);
+}
+
+// Function to clear the ith bit of
+// the given number num
+static int clearBit(int num, int i)
+{
+
+    // Create the mask for the ith
+    // bit unset
+    int mask = ~(1 << i);
+
+    // Return the updated value
+    return num & mask;
+}
+
 static public boolean isPowerOfTwo(int x)
   {
     // First x in the below expression is
@@ -27,7 +58,6 @@ static public boolean isPowerOfTwo(int x)
     // else all bits are not set
     return false;
   }
-
 
 
 swap two numbers:
